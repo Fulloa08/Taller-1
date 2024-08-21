@@ -4,9 +4,6 @@ import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
-        String[][] Cartas = String[12][2];
-        int[][] Puntajes = String[12][2];
-
         menu();
 
 
@@ -40,7 +37,7 @@ public class Main {
         }while (opcion != 2);
     }
 
-    public static String crearMatrizCartas(String Cartas [][]){
+    public static String crearMatrizCartas(){
         String[][] cartas = new String[12][2];
 
         cartas[0][0] = "As"; cartas[0][1] = "11";
@@ -60,16 +57,15 @@ public class Main {
 
     }
 
-    public static String agregarCartas (String nombreCarta, String puntaje){
+    //public static String agregarCartas (String nombreCarta, String puntaje){
 
 
             }
 
             }
-        }
-    }
 
-    public static void inicializarCartasJuego (){
+
+    public static int[] inicializarCartasJuego (){
         int[] mazo = new int[12]
         Random aleatorio = new Random();
         for (int i = 0; i <= 12; i++){
@@ -102,10 +98,6 @@ public class Main {
 
     }
 
-
-
-
-    }
 
 
 
