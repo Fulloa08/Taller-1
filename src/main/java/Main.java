@@ -4,8 +4,8 @@ import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
-        String[] Cartas = String[];
-        int[][] Puntajes = String[][];
+        String[][] Cartas = String[12][2];
+        int[][] Puntajes = String[12][2];
 
         menu();
 
@@ -16,8 +16,9 @@ public class Main {
 
     public static void menu(){
         int opcion = 0 ;
+        Scanner scanner = new Scanner(System.in);
         do {
-            Scanner scanner = new Scanner(System.in);
+
 
             System.out.println("-------- MENU PRINCIPAL ------------");
             System.out.println("1. Iniciar Juego");
@@ -40,7 +41,7 @@ public class Main {
     }
 
     public static String crearMatrizCartas(String Cartas [][]){
-        String[][] Cartas = new String[12][2];
+        String[][] cartas = new String[12][2];
 
         cartas[0][0] = "As"; cartas[0][1] = "11";
         cartas[1][0] = "Dos"; cartas[1][1] = "2";
@@ -55,10 +56,7 @@ public class Main {
         cartas[10][0] = "Jota"; cartas[10][1] = "10";
         cartas[11][0] = "Rey"; cartas[11][1] = "10";
 
-
-
-
-
+        return cartas;
 
     }
 
@@ -72,18 +70,23 @@ public class Main {
     }
 
     public static void inicializarCartasJuego (){
-        int[] mazo = String[12]
+        int[] mazo = new int[12]
         Random aleatorio = new Random();
-        for (int i = 1; i <= 11; i++){
-                mazo[i] = aleatorio.nextInt(11);
+        for (int i = 0; i <= 12; i++){
+                mazo[i] = i;
             }
         return mazo;
     }
 
-    public static void obtenerCartas(int[] mazo){
-        int[] mazo;
-        random = random.sample(mazo,3)
+    public static int[] obtenerCartas(int[] mazo){
+        Random aleatorio = new Random();
+        int[] seleccionadas = new int[3];
 
+        for (int i = 0; i < 3; i++){
+            int indiceAleatorio = aleatorio.nextInt(12);
+            seleccionadas[i] = mazo[indiceAleatorio];
+        }
+        return seleccionadas;
     }
 
     public static void jugar(){
